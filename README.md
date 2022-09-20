@@ -1,1 +1,11 @@
 # dune-yag-commands
+- ;links
+- ;dune
+- ;start
+- ;docs
+- ;feature
+- ;bugs
+- ;feedback
+- ;diff
+- ;decode
+- ;param
