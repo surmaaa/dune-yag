@@ -1,0 +1,186 @@
+{{/*Official Links*/}}
+{{ $website := "https://dune.com/browse/dashboards" }} 
+{{ $docs := "https://dune.com/docs/" }}
+{{ $twitter := "https://twitter.com/DuneAnalytics" }} 
+{{ $github := "https://github.com/duneanalytics" }}
+{{ $youtube := "https://www.youtube.com/channel/UCPrm9d2hLd_YxSExH7oRyAg" }}
+{{ $community := "https://dune.com/community"}}
+{{ $careers := "https://dune.com/careers" }}
+
+{{ $embed := cembed "title" "Dune Socials" 
+                    "description" ""
+                    "fields" (cslice
+                                (sdict "name" "🌐 Website" "value" $website)
+                                (sdict "name" "🧾 Docs" "value" $docs)
+                                (sdict "name" "💻 GitHub" "value" $github)
+                                (sdict "name" "🐦 Twitter" "value" $twitter)
+                                (sdict "name" "🎥 YouTube" "value" $youtube)
+                                (sdict "name" "✨ Community" "value" $community)
+                                (sdict "name" "🤝 Careers" "value" $careers)
+                                )
+                    "footer" 
+                        (sdict 
+                            "text" "Dune"
+                            "icon_url" "https://cdn.discordapp.com/role-icons/798214866996297760/9863cd3913fb0c201ccc5ed33fee8c5b.webp?size=20&quality=lossless")
+                    }}
+{{ $msgid := sendMessageRetID nil $embed }}
+{{ deleteTrigger 2 }}
+
+
+{{/*What is Dune?*/}}
+{{ $message := print "Here's a quick 5 minute video about Dune" 
+                        "\n" "https://dune.com/docs/#the-quick-5-minute-dune-overview" "\n"
+                        "\n" "Usecases"
+                        "\n" "https://dune.com/docs/getting-started/use-cases/" "\n"
+                        "\n" "You can also check our docs here"
+                        "\n" "https://dune.com/docs/"
+                        }}
+{{ $embed := cembed "title" "What is Dune?" 
+                    "description" $message
+                    "footer" 
+                        (sdict 
+                            "text" "Dune"
+                            "icon_url" "https://cdn.discordapp.com/role-icons/798214866996297760/9863cd3913fb0c201ccc5ed33fee8c5b.webp?size=20&quality=lossless")
+                    }}
+{{ $msgid := sendMessageRetID nil $embed }}
+{{ deleteTrigger 2 }}
+
+
+{{/*Where should I start?*/}}
+{{ $message := print "Pick your own path and walk:)" "\n"
+                        "\n" "**Intro Tutorials**"
+                        "\n" "https://dune.com/docs/getting-started/video-series/" "\n"
+                        "\n" "**Our Network Youtube Series**" 
+                        "\n" "https://dune.com/docs/getting-started/video-series/" "\n"
+                        "\n" "**Dune Guides**"
+                        "\n" "https://dune.com/docs/getting-started/dune-guides/" "\n"
+                        "\n" "**SQL Guides**" 
+                        "\n" "https://dune.com/docs/getting-started/sql-guides/" "\n"
+                        }}
+{{ $embed := cembed "title" "Where should I start?" 
+                    "description" $message
+                    "footer" 
+                        (sdict 
+                            "text" "Dune"
+                            "icon_url" "https://cdn.discordapp.com/role-icons/798214866996297760/9863cd3913fb0c201ccc5ed33fee8c5b.webp?size=20&quality=lossless")
+                    }}
+{{ $msgid := sendMessageRetID nil $embed }}
+{{ deleteTrigger 2 }}
+
+
+{{/*Docs*/}}
+{{ $message := print "You can check our docs here"
+                        "\n" "https://dune.com/docs/"
+                        }}
+{{ $embed := cembed "title" "Dune Docs" 
+                    "description" $message
+                    "footer" 
+                        (sdict 
+                            "text" "Dune"
+                            "icon_url" "https://cdn.discordapp.com/role-icons/798214866996297760/9863cd3913fb0c201ccc5ed33fee8c5b.webp?size=20&quality=lossless")
+                    }}
+{{ $msgid := sendMessageRetID nil $embed }}
+{{ deleteTrigger 2 }}
+
+
+{{/*Feature Requests*/}}
+{{ $message := print "Please submit a feature request here"
+                        "\n" "https://feedback.dune.xyz/features"
+                        }}
+{{ $embed := cembed "title" "Feature Requests" 
+                    "description" $message
+                    "footer" 
+                        (sdict 
+                            "text" "Dune"
+                            "icon_url" "https://cdn.discordapp.com/role-icons/798214866996297760/9863cd3913fb0c201ccc5ed33fee8c5b.webp?size=20&quality=lossless")
+                    }}
+{{ $msgid := sendMessageRetID nil $embed }}
+{{ deleteTrigger 2 }}
+
+
+{{/*Bugs*/}}
+{{ $message := print "Please submit bugs here"
+                        "\n" "https://feedback.dune.xyz/bugs"
+                        }}
+{{ $embed := cembed "title" "Bug Reports" 
+                    "description" $message
+                    "footer" 
+                        (sdict 
+                            "text" "Dune"
+                            "icon_url" "https://cdn.discordapp.com/role-icons/798214866996297760/9863cd3913fb0c201ccc5ed33fee8c5b.webp?size=20&quality=lossless")
+                    }}
+{{ $msgid := sendMessageRetID nil $embed }}
+{{ deleteTrigger 2 }}
+
+
+{{/*What is the difference between v1 & v2*/}}
+{{ $message := print "**V1** is based on Row Oriented Database (Postgres SQL) where as **V2** is based on Column Oriented Database (Databricks SQL) " "\n"
+                        "\n" "**Row Oriented Database**"
+                        "\n" "https://dune.com/docs/features/dune-v2/query-engine/#row-oriented-database" "\n"
+                        "\n" "**Column Oriented Database**"
+                        "\n" "https://dune.com/docs/features/dune-v2/query-engine/#column-oriented-database" "\n"
+                        "\n" "**Row vs Column Oriented Databases**"
+                        "\n" "https://dataschool.com/data-modeling-101/row-vs-column-oriented-databases/" "\n"
+                        "\n" "**A Detailed lecture about Data Layouts (MUST WATCH)**"
+                        "\n" "https://www.youtube.com/watch?v=-PwvkKBl1UE" "\n"
+                        "\n" "**More about V2 here**"
+                        "\n" "https://dune.com/docs/features/dune-v2/"
+                        }}
+{{ $embed := cembed "title" "What is the difference between v1 & v2?" 
+                    "description" $message
+                    "footer" 
+                        (sdict 
+                            "text" "Dune"
+                            "icon_url" "https://cdn.discordapp.com/role-icons/798214866996297760/9863cd3913fb0c201ccc5ed33fee8c5b.webp?size=20&quality=lossless")
+                    }}
+{{ $msgid := sendMessageRetID nil $embed }}
+{{ deleteTrigger 2 }}
+
+
+{{/*How to submit new contracts for decoding?*/}}
+{{ $message := print "Please follow the instructions listed in here:"
+                        "\n" "https://dune.com/docs/features/adding-new-contracts/"
+                        }}
+{{ $embed := cembed "title" "How to submit new contracts for decoding?" 
+                    "description" $message
+                    "footer" 
+                        (sdict 
+                            "text" "Dune"
+                            "icon_url" "https://cdn.discordapp.com/role-icons/798214866996297760/9863cd3913fb0c201ccc5ed33fee8c5b.webp?size=20&quality=lossless")
+                    }}
+{{ $msgid := sendMessageRetID nil $embed }}
+{{ deleteTrigger 2 }}
+
+
+{{/*What are Parameters?*/}}
+{{ $message := print "Parameters allow you to make a certain part of your SQL query dynamic and thereby offer you to make Queries and dashboards interactive." "\n"
+                        "\n" "For more info read here"
+                        "\n" "https://dune.com/docs/features/parameters/"
+                        }}
+{{ $embed := cembed "title" "What are Parameters?" 
+                    "description" $message
+                    "footer" 
+                        (sdict 
+                            "text" "Dune"
+                            "icon_url" "https://cdn.discordapp.com/role-icons/798214866996297760/9863cd3913fb0c201ccc5ed33fee8c5b.webp?size=20&quality=lossless")
+                    }}
+{{ $msgid := sendMessageRetID nil $embed }}
+{{ deleteTrigger 2 }}
+
+
+{{/*Feedback*/}}
+{{ $message := print "We value your feedback, Please submit yours/upvote here and get a cookie 🥠"
+                        "\n" "https://feedback.dune.xyz/"
+                        }}
+{{ $embed := cembed "title" "Feedback" 
+                    "description" $message
+                    "footer" 
+                        (sdict 
+                            "text" "Dune"
+                            "icon_url" "https://cdn.discordapp.com/role-icons/798214866996297760/9863cd3913fb0c201ccc5ed33fee8c5b.webp?size=20&quality=lossless")
+                    }}
+{{ $msgid := sendMessageRetID nil $embed }}
+{{ deleteTrigger 2 }}
+
+
+
