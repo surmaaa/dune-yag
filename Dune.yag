@@ -113,6 +113,21 @@
 {{ deleteTrigger 2 }}
 
 
+{{/*Feedback*/}}
+{{ $message := print "We value your feedback, Please submit yours/upvote here and get a cookie 🥠"
+                        "\n" "https://feedback.dune.xyz/"
+                        }}
+{{ $embed := cembed "title" "Feedback" 
+                    "description" $message
+                    "footer" 
+                        (sdict 
+                            "text" "Dune"
+                            "icon_url" "https://cdn.discordapp.com/role-icons/798214866996297760/9863cd3913fb0c201ccc5ed33fee8c5b.webp?size=20&quality=lossless")
+                    }}
+{{ $msgid := sendMessageRetID nil $embed }}
+{{ deleteTrigger 2 }}
+
+
 {{/*What is the difference between v1 & v2*/}}
 {{ $message := print "**V1** is based on Row Oriented Database (Postgres SQL) where as **V2** is based on Column Oriented Database (Databricks SQL) " "\n"
                         "\n" "**Row Oriented Database**"
@@ -166,21 +181,3 @@
                     }}
 {{ $msgid := sendMessageRetID nil $embed }}
 {{ deleteTrigger 2 }}
-
-
-{{/*Feedback*/}}
-{{ $message := print "We value your feedback, Please submit yours/upvote here and get a cookie 🥠"
-                        "\n" "https://feedback.dune.xyz/"
-                        }}
-{{ $embed := cembed "title" "Feedback" 
-                    "description" $message
-                    "footer" 
-                        (sdict 
-                            "text" "Dune"
-                            "icon_url" "https://cdn.discordapp.com/role-icons/798214866996297760/9863cd3913fb0c201ccc5ed33fee8c5b.webp?size=20&quality=lossless")
-                    }}
-{{ $msgid := sendMessageRetID nil $embed }}
-{{ deleteTrigger 2 }}
-
-
-
